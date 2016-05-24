@@ -310,16 +310,6 @@
                     </includes>
                 </configuration>
             </plugin>
-#removed
-#            <plugin>
-#                <groupId>org.apache.maven.plugins</groupId>
-#                <artifactId>maven-war-plugin</artifactId>
-#                <version>2.3</version>
-#                <configuration>
-#                    <warName>petclinic</warName>
-#                </configuration>
-#            </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-eclipse-plugin</artifactId>
@@ -403,7 +393,6 @@
     </reporting>
     <profiles>
 
-		#added for lab 1 openstack
 		<profile>
 		<id>openshift</id>
  		<build>
