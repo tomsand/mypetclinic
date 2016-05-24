@@ -310,14 +310,16 @@
                     </includes>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                    <warName>petclinic</warName>
-                </configuration>
-            </plugin>
+#removed
+#            <plugin>
+#                <groupId>org.apache.maven.plugins</groupId>
+#                <artifactId>maven-war-plugin</artifactId>
+#                <version>2.3</version>
+#                <configuration>
+#                    <warName>petclinic</warName>
+#                </configuration>
+#            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-eclipse-plugin</artifactId>
@@ -400,6 +402,27 @@
         </plugins>
     </reporting>
     <profiles>
+
+		#added for lab 1 openstack
+		<profile>
+		<id>openshift</id>
+ 		<build>
+    		<finalName>mypetclinic</finalName>
+    		<plugins>
+      		<plugin>
+            	<groupId>org.apache.maven.plugins</groupId>
+            	<artifactId>maven-war-plugin</artifactId>
+            	<version>2.3</version>
+            	<configuration>
+                <failOnMissingWebXml>false</failOnMissingWebXml>
+                <outputDirectory>deployments</outputDirectory>
+                <warName>ROOT</warName>
+            	</configuration>
+        	</plugin>
+    		</plugins>
+  		</build>
+		</profile>
+		
 		<profile>
 			<id>bower-install</id>
   			<build>
